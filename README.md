@@ -1,57 +1,84 @@
-# Progetto elettronico Arduino
+# Smart Christmas Crib with ESP32
 
-Un progetto elettronico usando Arduino per rendere smart un presepe di natale, tramite componenti e programmazione.
+A smart Christmas nativity scene built with ESP32, capable of controlling lighting, music, and a waterfall both locally and remotely.
 
-## Obiettivo
+The system can be managed via:
 
-Controllare da remoto luci, musica e cascata in un presepe, utilizzando assistente vocale come Alexa, sito web con linguaggi HTML, CSS e JavaScript ed app mobile in Flutter. 
+- physical buttons;
+- web interface developed with HTML, CSS, and JavaScript;
+- mobile app developed in Flutter;
+- Alexa voice assistant.
 
-## Materiale utilizzato
+## Objective
+The goal of the project is to integrate electronics, programming, and home automation into a single, easy-to-use system.
 
-- Modulo WiFi e Bluethoot ESP32 con ingresso type C
+## Features
+- Turn the nativity scene lights on and off.
+- Control the waterfall water pump.
+- Play music via SD card.
+- Local control via physical buttons.
+- Remote control via Wi-Fi.
+- Integration with Alexa for voice commands.
+
+## Materials Used
+### Hardware
+- ESP32
 - DFPlayer Mini
-- Amplificatore PAM8406
-- 2 moduli relè per Arduino.
-- Resistenze
-- LED RGB
-- Altoparlanti 3W 8Ω
-- 2 Breadboard
-- Cavi jumper (maschio-maschio, femmina-femmina, maschio-femmina)
-- Mini pompa per acqua per la cascata.
-- Stringa luci LED
-- 6 bottoni ON/OFF.
-- Fusibili 1A
-- Portafusibili
-- Pinza spellacavi
-- Multimetro
-- Connettori a leva per fili
-- Scatola di derivazione per alloggiare il circuito.
-- Un paio di metri di cavo rosso e nero per allungamenti.
-- Alimentatore 5V con cavo usb type C
+- PAM8406 Amplifier
+- Relay Modules
+- LEDs and String Lights
+- Mini Water Pump
+- 3W 8Ω Speakers
+- Buttons
+- Breadboard
+- Resistors
+- Fuses
+- 5V USB-C Power Supply
+### Software
+- Arduino IDE
+- C++
+- HTML
+- CSS
+- JavaScript
+- Flutter
 
-## Collegamenti
+## System Architecture
 
+The ESP32 is the heart of the project.
+It receives commands from the physical buttons or via Wi-Fi (website, mobile app, or Alexa) and manages the various connected devices.
+For music, it communicates with the DFPlayer Mini, which reads MP3 files stored on the SD card.
+The audio signal is sent to the PAM8406, which drives the two speakers.
+The lights and waterfall pump are controlled via the relay modules.
 
+This way, all control modes use the same centralized logic, ensuring consistent system operation.
 
-## Come funziona
+## Wiring Diagram
 
-Spiegazione del funzionamento.
+The main connections are:
+- common power supply for the ESP32, DFPlayer, amplifier, and relay;
+- DFPlayer connected to the ESP32 via UART;
+- DFPlayer audio output connected to the PAM8406 amplifier;
+- buttons connected to the ESP32's digital inputs;
+- relays connected to the ESP32's digital outputs for controlling the lights and pump.
 
-## Foto
+## Images
+The complete schematic is included in the Images folder, along with other schematics.
 
-<div style = "display:flex; align-items:center; justify-content:space-around; gap:20px">
-<img src="https://github.com/emanuelenassisi007-cyber/Arduino-project/blob/Images/circuito.png" alt="circuito" width="500">
-<img src="https://github.com/emanuelenassisi007-cyber/Arduino-project/blob/Images/schema-PCB.png" alt="schema su PCB" width="500">
-</div>
+## Code
 
-## Codice
-
-Il codice si trova nella cartella Arduino.
+The code is located in the Arduino folder.
 
 ## Video
 
-Video dimostrativo nella cartella Videos.
+There are currently no demonstration videos of the finished project. They will be uploaded soon.
 
-## Autore
+## Possible Future Developments
+- Light intensity control.
+- Automatic programming of switch-on times.
+- Management of custom lighting effects.
+- System status monitoring via notifications.
+- Designing a custom PCB (Printed Circuit Board) to replace the breadboard, making the circuit more compact, reliable, and suitable for permanent use. The Images folder contains a simple, unfinished schematic of what the PCB circuit could look like.
 
-Emanuele
+## Author
+
+Emanuele Nassisi
